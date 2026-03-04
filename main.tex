@@ -1,0 +1,165 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{datetime2}
+\usepackage{xparse}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+ 
+ \usepackage{graphicx}
+ \usepackage{titling}
+
+ \title{Review of artificial intelligence applications in engineering design
+perspective
+}
+% \author darft code{Muhammad Qomaruz Zaman}
+\date{18 March 2025}
+ 
+ \usepackage{fancyhdr}
+\fancypagestyle{plain}{%  the preset of fancyhdr 
+    \fancyhf{} % clear all header and footer fields
+    \fancyfoot[R]{}
+    \fancyfoot[L]{}
+    \fancyhead[L]{\includegraphics[width=2cm]{ITS_pojok.pdf}}
+    \fancyhead[R]{ \DTMnow}
+}
+\makeatletter
+\def\@maketitle{%
+  \newpage
+  \null
+  \vskip 1em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\LARGE \@title \par}%
+    \vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  \par
+  \vskip 1em}
+\makeatother
+
+\usepackage{lipsum}  
+% \usepackage{cmbright} % Change the font by zee
+
+\begin{document}
+
+\maketitle
+
+
+\noindent\begin{tabular}{@{}ll}
+    Author: & Rizal Bayu Kurniawan\\
+    NRP: & 6022251014\\
+     Teacher: &  Muhammad Qomaruz Zaman, S.T., M.T., Ph.D.\\
+     Class name: & Kecerdasan Buatan (X)\\
+     %YouTube video link: & \url{https://youtu.be/XnGeqjbIusw?si=C58i2F8sJz37gfQx} \\
+     GitHub link: & \url{https://github.com/huggingface/datasets.git}
+\end{tabular}
+\vspace{1cm}
+
+
+\section*{1. Pendahuluan}
+Perkembangan kecerdasan buatan atau biasa disebut Artificial Intelligence telah membawa perubahan fundamental dalam berbagai disiplin ilmu, termasuk pada desain teknik. Proses desain yang sebelumnya tradisional yang berpusat pada manusia kini mulai bergeser dengan integrasi AI yang memungkinkan penanganan parameter ambigu atau penuh ketidakpastiaan serta mampu memcahkan permasalah secara kompleks (\cite{pahl2013engineering}; \cite{huang2019review}). Paper yang ditulis oleh Yuksel et al. (2023)\cite{yuksel2023review} ini bisa digunakan sebagai tinjauan literatur komprehensif yang memetakan penggunaan metode AI dalam desain teknik selama periode 2006-2021. Review ini bertujuan untuk menganalisis kontribusi paper tersebut dalam memberikan pemahaman tentang integrasi AI dalam proses desain teknik.
+
+\section*{2. Ringkasan Paper} %judul 2
+\subsection*{2.1 Defiinisi Kecerdasan Buatan}
+Menurut Ertel (2017) \cite{ertel2017introduction}, Kecerdasan buatan atau AI adalah nama umum untuk algoritma komputer yang meniru proses mental makhluk hidup, seperti berpikir dan belajar. Liu et al. (2018) \cite{liu2018artificial} menambahkan bahwa kecerdasan buatan melibatkan aktivitas seperti pemahaman, estimasi, dan pemecahan masalah. Ini berbeda dari pemrograman tradisional karena AI bisa bekerja dengan data tidak lengkap dan membuat pengambilan keputusan secara logis bahkan sangat logis dengan keunggulan kemampuan komputasi tinggi, pemrosesan big data, dan keputusan objektif, yang melebihi manusia dalam menjalankan tugas \cite{liao2020framework} ; \cite{allison2022artificial}.
+AI dibagi menjadi strong AI (meniru pemikiran manusia sepenuhnya) dan weak AI (efisien untuk tugas spesifik) \cite{verganti2020innovation} ; \cite{lucci2016artificial}. Kebanyakan AI saat ini adalah weak AI.
+\subsection*{2.2 Metode Utama}
+Paper Yuksel et al. (2023) membahas beberapa metode AI utama yang paling sering digunakan:
+\subsubsection*{2.2.1 Machine Learning}
+Menurut Yüksel et al. (2023), machine learning (ML) didefinisikan sebagai metode AI statistik yang dapat membuat prediksi dan penalaran seacra logis berdasarkan data tanpa memerlukan algoritma eksplisit seperti pemrograman tradisional. ML dibagi menjadi tiga jenis utama: supervised learning (belajar dari data berlabel untuk prediksi seperti klasifikasi atau regresi), unsupervised learning (menemukan pola tersembunyi seperti clustering atau pengurangan dimensi), dan reinforcement learning (belajar melalui reward dan punishment seperti dalam game). Algoritma populer termasuk artificial neural networks (ANN), support vector machines (SVM), decision trees, dan k-nearest neighbors (K-NN). ML unggul dalam tugas seperti pemrosesan bahasa alami, pengenalan suara atau gambar, dan pengenalan pola, serta sering digunakan dalam desain rekayasa untuk evaluasi, optimasi, dan generasi konsep, meskipun memerlukan data besar dan rentan terhadap overfitting.
+
+\subsubsection*{2.2.2 Genetic Algorithm}
+Yüksel et al. (2023) menjelaskan bahwa genetic algorithm (GA) adalah algoritma pencarian heuristik yang dikembangkan oleh John Holland pada awal 1970-an, meniru proses evolusi alam seperti seleksi alam, crossover (persilangan), dan mutasi untuk menemukan solusi optimal. GA bekerja dengan populasi solusi awal (kromosom) yang dievaluasi berdasarkan fungsi fitness, kemudian iterasi menghasilkan generasi baru melalui operator genetik hingga mencapai optimum global. Metode ini efektif untuk masalah optimasi multi-objective dan non-linear di desain rekayasa, seperti optimasi topologi atau generasi konsep, tetapi memerlukan tuning parameter seperti ukuran populasi, tingkat mutasi, dan crossover. GA sering dikombinasikan dengan metode lain seperti ANN untuk meningkatkan kinerja, dan kelemahannya termasuk kebutuhan desainer berpengalaman serta potensi user fatigue dalam varian interaktif.
+\subsubsection*{2.2.3 Fuzzy Logic}
+Dalam paper Yüksel et al. (2023), fuzzy logic (FL) adalah teori yang memperluas logika biner klasik, dikembangkan oleh Lotfi Zadeh pada pertengahan 1960-an, untuk menangani ketidakpastian dan ambiguitas dengan fungsi keanggotaan (membership function) yang memberikan derajat kebenaran antara 0 dan 1, bukan hanya benar atau salah. FL melibatkan fuzzification (mengubah input crisp menjadi fuzzy sets), inferensi berdasarkan aturan if-then, dan defuzzification (mengubah output fuzzy menjadi nilai crisp). Metode ini cocok untuk desain rekayasa di tahap evaluasi dan pengambilan keputusan, seperti pemilihan material atau penilaian estetika, karena mudah diintegrasikan dengan pengetahuan manusia dan menangani parameter ambigu. Kelebihannya adalah interpretabilitas tinggi, tetapi kekurangannya termasuk kesulitan membangun basis aturan kompleks dan kecepatan lambat untuk data besar. FL sering dikombinasikan dengan AHP atau ANN untuk hasil lebih akurat.
+
+\subsection*{2.3 Perkembangan Kecerdasan Buatan}
+\subsubsection*{2.2.1 Pergeseran dari Metode Rule-Based ke Data-Driven}
+Perkembangan paling signifikan dalam aplikasi AI untuk desain teknik adalah pergeseran paradigma dari metode berbasis aturan (rule-based) ke pendekatan berbasis data (data-driven). Pada periode awal 2006-2009, metode klasik seperti expert systems, fuzzy logic, genetic algorithm, dan artificial neural networks mendominasi dengan pangsa penggunaan 15\% lebih tinggi dari metode lain. Metode-metode ini sangat bergantung pada pengetahuan dan aturan yang dibuat oleh manusia. Namun, sejak tahun 2014 terjadi peningkatan dramatis jumlah publikasi tentang AI dalam desain, yang sebagian disebabkan oleh perkembangan teknologi komputer berkinerja tinggi dan kemudahan akses ke penyimpanan data \cite{coe2020}. Pada periode 2016-2021, machine learning dan deep learning menguasai sekitar 64\% dari seluruh penelitian desain yang melibatkan AI, menunjukkan pergeseran yang jelas menuju pendekatan data-driven.
+\subsubsection*{2.2.2 Peningkatan Publikasi dan Minat Penelitian}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{pict1.png}
+    \caption{\footnotesize Distribution of publications involving the design based on AI methods between 2006 and 2021, (ES: Expert Systems, FL: Fuzzy Logic, GA: Genetic Algorithm, ANN: Artificial Neural Networks, ML: Machine Learning, DL: Deep Learning).}
+    \label{fig:enter-label}
+\end{figure}
+
+Gambar 1 menunjukkan perubahan tingkat penggunaan metode AI dalam aplikasi desain berdasarkan interval tahun. Pada periode 2006-2009, expert systems dan genetic algorithms menjadi yang paling populer. Memasuki awal 2010-an, studi desain berbasis machine learning mulai muncul dalam literatur. Pada periode 2016 dan seterusnya, machine learning dan deep learning menjadi topik penelitian paling populer dengan pangsa sekitar 64\%. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{2.png}
+    \caption{\footnotesize DDistribution of publications involving the topic of design based on AI methods between 2006 and 2021}
+    \label{fig:enter-label}
+\end{figure}
+\\Gambar 2 memperlihatkan perubahan topik penelitian AI dalam desain dari waktu ke waktu. Antara 2006-2009, sebagian besar penelitian AI dalam desain (71\%) terkait dengan proses evaluasi, optimasi, dan pengambilan keputusan. Lima tahun berikutnya terjadi peningkatan penelitian optimasi berbasis AI. Dalam lima tahun terakhir, studi tentang ideasi dan inspirasi menjadi lebih menonjol dan bahkan menjadi topik penelitian paling dominan dengan 37\%, diikuti oleh peningkatan studi pemodelan (terutama dengan deep learning).
+\subsubsection*{2.2.3 Perkembangan Explainable AI}
+Seiring dengan perkembangan AI, muncul keprihatinan tentang sifat "black box" dari algoritma AI di mana keputusan yang diambil sulit dipahami alasannya. Hal ini menjadi masalah serius di sektor-sektor seperti pertahanan, kesehatan, dan perbankan di mana keputusan memiliki implikasi besar \cite{minh2022explainable} \cite{vassiliades2021argumentation} \cite{wells2021explainable}. Dari keprihatinan ini, muncullah konsep Explainable Artificial Intelligence (XAI) yang bertujuan memperjelas struktur kerja internal AI dan alasan di balik keputusan yang dibuat. XAI bertujuan memahami hubungan sebab-akibat, mengidentifikasi kekuatan dan kelemahan, serta memahami perilaku AI di masa depan. Minh et al. (2022) \cite{minh2022explainable} membagi XAI menjadi tiga kelompok: pre-modelling explainability (memahami data setelah pemrosesan), interpretable model (model yang dapat dipahami dengan memeriksa struktur dan parameternya seperti rule-based learning dan decision trees), dan post-modelling explainability (metode visual, tekstual, dan penyederhanaan untuk mengidentifikasi tingkat pengaruh atribut terhadap keputusan AI).
+
+\subsubsection*{2.2.4 Perkembangan Metode Deep Learning dalam Desain}
+Deep learning telah mengalami perkembangan pesat dalam aplikasi desain, terutama dalam beberapa tahun terakhir. Generative Adversarial Networks (GAN) memberikan perspektif baru pada deep learning dengan kemampuannya melakukan tugas-tugas seperti membuat gambar yang sebelumnya tidak ada, meningkatkan resolusi gambar, membuat model 3D dari gambar 2D, memperkirakan sudut berbeda dari suatu objek, dan text-to-image translation \cite{jin2020new} \cite{rahman2020using}. Chen et al. (2019) \cite{chen2019artificial} mengembangkan model inspirasi berbasis GAN yang dilatih dengan gambar objek biologis dan objek target untuk menghasilkan gambar baru yang terdiri dari kombinasi kedua objek tersebut.
+
+\subsubsection*{2.2.5 Perkembangan Algoritma Optimasi}
+Dalam bidang optimasi desain, berbagai algoritma baru terus berkembang. Swarm intelligence algorithms yang terinspirasi dari perilaku kolektif makhluk sosial seperti Particle Swarm Optimization (PSO) dan Ant Colony Optimization (ACO) menjadi metode heuristik paling populer karena kebutuhan memori rendah dan kemudahan aplikasi. Differential Evolution (DE) berkembang sebagai metode optimasi untuk fungsi multidimensional real-valued tanpa menggunakan gradien, cocok untuk masalah optimasi yang diskontinu, bising, dan berubah seiring waktu. Perkembangan terbaru menunjukkan peningkatan penggunaan deep learning untuk masalah optimasi topologi dan bentuk, meskipun membutuhkan data besar untuk menghindari over-fitting. Untuk mengatasi masalah dimensi tinggi dalam sistem kompleks, dikembangkan strategi seperti design domain reduction, critical parameters identification, parallel computing, decomposing design problems, dan visualizing the design space.
+\subsubsection*{2.2.6 Trend Masa Depan}
+Penulis memproyeksikan bahwa masa depan AI akan berorientasi pada metode machine learning dan deep learning, didorong oleh kemudahan akses data dan peningkatan kapasitas komputasi. Data terus diproduksi oleh Internet of Things (IoT), situs belanja online, mesin pencari, dan survei, meskipun pemrosesan, pengorganisasian, dan pelabelan data masih mahal dan memakan waktu. Database paten, ontologi, dan dataset desain (teks, gambar, model) akan semakin penting untuk penelitian masa depan. Penelitian mendatang juga akan fokus pada peningkatan performa model melalui penentuan hyperparameter ideal, memperpendek waktu training, dan melatih model deep learning dengan data terbatas. Yang paling penting, penulis menekankan bahwa desain bukan hanya tentang penampilan estetika, tetapi juga fungsi dan perilaku produk. Studi masa depan harus mengintegrasikan karakteristik fungsional dan perilaku untuk desain yang lebih aplikatif, serta mengintegrasikan AI dengan teknologi rapid prototyping, virtual reality (VR), dan augmented reality (AR) untuk meningkatkan efisiensi dan performa model desain generatif.
+\section*{3. Kesimpulan} %judul 3
+Paper Yuksel et al. (2023) memberikan tinjauan komprehensif tentang perkembangan dan aplikasi kecerdasan buatan dalam perspektif desain teknik selama periode 2006-2021. Berdasarkan analisis terhadap 184 publikasi yang dipilih secara sistematis dari database Scopus dan Web of Science, paper ini berhasil memetakan lanskap penelitian AI dalam desain dengan cakupan yang mencakup baik metode klasik (fuzzy logic, genetic algorithm, expert systems, artificial neural networks) maupun metode modern (machine learning dan deep learning).
+
+\textbf{Pertama}, terjadi pergeseran paradigma yang signifikan dari metode berbasis aturan (rule-based) ke pendekatan berbasis data (data-driven). Pada periode 2006-2009, metode klasik mendominasi dengan pangsa 15\% lebih tinggi dari metode lain, sementara pada periode 2016-2021, machine learning dan deep learning menguasai sekitar 64\% dari seluruh penelitian desain yang melibatkan AI. Pergeseran ini didorong oleh perkembangan teknologi komputer berkinerja tinggi, kemudahan akses ke big data, dan ketersediaan dataset berlabel dari berbagai sumber seperti media sosial, database paten, dan repositori 3D.
+
+\textbf{Kedua}, terjadi perubahan fokus topik penelitian dari evaluasi dan optimasi menuju ideasi dan inspirasi. Pada periode 2006-2009, sebagian besar penelitian (71\%) berfokus pada evaluasi, optimasi, dan pengambilan keputusan. Namun dalam lima tahun terakhir, studi tentang ideasi dan inspirasi menjadi dominan dengan 37\%, diikuti oleh peningkatan studi pemodelan terutama dengan deep learning. Hal ini menunjukkan peran AI yang semakin kreatif dan eksploratif dalam proses desain.
+
+\textbf{Ketiga}, paper ini mengidentifikasi taksonomi aplikasi AI berdasarkan enam tahapan desain: inspirasi, generasi ide dan konsep, evaluasi konsep, optimasi desain, sistem pendukung desain, serta pemodelan dan retrieval. Setiap tahapan memiliki metode AI yang paling sesuai, misalnya GAN untuk generasi konsep, fuzzy logic untuk evaluasi dengan kriteria subjektif, dan genetic algorithm untuk optimasi ruang solusi besar.
+
+\textbf{Keempat}, isu black box dalam AI mendorong perkembangan Explainable Artificial Intelligence (XAI) yang bertujuan memperjelas struktur kerja internal AI dan alasan di balik keputusan yang dibuat. XAI menjadi semakin penting di sektor-sektor seperti pertahanan, kesehatan, dan perbankan di mana keputusan memiliki implikasi besar. Contoh aplikasi XAI dalam desain ditunjukkan melalui penggunaan Grad-CAM untuk memprediksi biaya produksi dan memvisualisasikan area kompleks pada model 3D.
+
+\textbf{Kelima}, paper ini memberikan kontribusi praktis berupa algoritma pemilihan metode AI dua tingkat yang memandu desainer dalam menentukan metode tepat berdasarkan ketersediaan data, kebutuhan interpretabilitas, dan jenis masalah desain. Algoritma ini sangat bermanfaat terutama bagi desainer pemula yang mungkin belum memiliki pengetahuan mendalam tentang AI.
+
+\textbf{Keenam}, proyeksi masa depan menunjukkan bahwa penelitian akan berfokus pada pengembangan model yang mengintegrasikan aspek fungsi dan perilaku produk (bukan hanya estetika), integrasi dengan teknologi rapid prototyping, virtual reality (VR), dan augmented reality (AR), serta pelatihan model deep learning dengan data terbatas (few-shot learning). Database paten, ontologi, dan dataset desain akan semakin penting untuk penelitian mendatang.
+
+Dengan demikian, paper Yuksel et al. (2023) berkontribusi signifikan dalam memberikan pemahaman komprehensif tentang state-of-the-art aplikasi AI dalam desain teknik, sekaligus menjadi referensi fundamental bagi peneliti dan praktisi yang ingin mengintegrasikan AI dalam proses desain.
+
+\begin{table}[htbp]
+\centering
+\caption{Perbandingan Metode AI dalam Desain}
+\begin{tabular}{llll}
+\hline
+\textbf{Aspek} & \textbf{Machine Learning} & \textbf{Genetic Algorithml} & \textbf{Fuzzy Logic} \\ \hline
+\textbf{Paradigma}       & Data-driven &Evolution-based &Rule-based     \\ \hline
+\begin{tabular}[c]{@{}l@{}} \textbf{Data yang}\\ \textbf{dibutuhkan}  \end{tabular}    & Besar (big data) &Sedang (fungsi fitness) &Sedikit (aturan pakar)        \\ \hline
+ \textbf{Interpretabilitas }         & Rendah (black box) &Sedang &Tinggi       \\ \hline
+\textbf{Cara kerja   }       & Belajar dari pola data &\begin{tabular}[c]{@{}l@{}}Evolusi solusi melalui\\ seleksi, crossover, mutasi \end{tabular}  &Rule If-Then       \\ \hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Keunggulan}\\ \textbf{utama } \end{tabular}        &  \begin{tabular}[c]{@{}l@{}}
+Akurasi tinggi, otomatis, \\mampu memproses big data
+     
+\end{tabular} &\begin{tabular}[c]{@{}l@{}}Menemukan global \\optimum ruang solusi\\ besar\end{tabular} &\begin{tabular}[c]{@{}l@{}}Menangani ambiguitas,\\ mirip cara berpikir \\manusia  \end{tabular}     \\ \hline
+\begin{tabular}[c]{@{}l@{}}\textbf{Keterbatasan }\\\textbf{utama  }   \end{tabular}     & \begin{tabular}[c]{@{}l@{}} Butuh data besar, black box,\\ komputasi tinggi \end{tabular} &\begin{tabular}[c]{@{}l@{}}Parameter sensitif, \\ pengkodean kompleks, \\komputasi mahal\end{tabular} &\begin{tabular}[c]{@{}l@{}}Aturan subjektif,\\ pembuatan aturan \\butuh pengalaman    \end{tabular}     \\ \hline
+\textbf{Tahapan desain }         & \begin{tabular}[c]{@{}l@{}}Inspirasi, generasi, evaluasi,\\ prediksi \end{tabular} &\begin{tabular}[c]{@{}l@{}}Optimasi, pencarian \\solusi, evaluasi \end{tabular} &\begin{tabular}[c]{@{}l@{}}Evaluasi, pengambilan\\ keputusan    \end{tabular}   \\ \hline
+\textbf{Aplikasi spesifik}         & \begin{tabular}[c]{@{}l@{}}Klasifikasi gambar, generasi  \\ konsep baru, prediksi preferensi \end{tabular}  & \begin{tabular}[c]{@{}l@{}}Optimasi konfigurasi, tata \\ letak, perencanaan\end{tabular}&\begin{tabular}[c]{@{}l@{}}Evaluasi estetika,\\ pemilihan material,\\ penilaian subjektif    \end{tabular}   \\ \hline
+
+
+\end{tabular}
+\label{tab:dummy_table} % Add a label for referencing
+\end{table}
+\newpage
+
+
+\bibliographystyle{IEEEtran} 
+\end{split}
+\bibliography{references}
+
+
+
+\end{document}
